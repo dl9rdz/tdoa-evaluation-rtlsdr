@@ -9,7 +9,7 @@ close all;
 
 % adds subfolder with functions to PATH
 [p,n,e] = fileparts(mfilename('fullpath'));
-addpath([p '\functions'])
+addpath([p '/functions'])
 
 
 %% Specify Parameters
@@ -45,9 +45,9 @@ heatmap_threshold = 0.1;  % heatmap point with lower mag are suppressed for html
 % IQ Data Files
 file_identifier = 'test.dat';
 
-dateiname1 = ['recorded_data\1_' file_identifier];
-dateiname2 = ['recorded_data\2_' file_identifier];
-dateiname3 = ['recorded_data\3_' file_identifier];
+dateiname1 = ['recorded_data/1_' file_identifier];
+dateiname2 = ['recorded_data/2_' file_identifier];
+dateiname3 = ['recorded_data/3_' file_identifier];
 
 % known signal path differences between two RXes to Ref (sign of result is important!)
 rx_distance_diff12 = dist_latlong_kl(tx_ref_lat, tx_ref_long, rx1_lat, rx1_long) - dist_latlong_kl(tx_ref_lat, tx_ref_long, rx2_lat, rx2_long); % (Ref to RX1 - Ref to RX2) in meters
