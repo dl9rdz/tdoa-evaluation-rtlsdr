@@ -1,0 +1,55 @@
+{
+  "RX1": {
+    "lat": 49.441,
+    "long": 7.767
+  },
+  "RX2": {
+    "lat": 49.422,
+    "long": 7.739
+  },
+  "RX3": {
+    "lat": 49.425,
+    "long": 7.756
+  },
+  "RotenbergDAB": {
+     "lat": 49.45962,
+     "long": 7.77116
+  },
+  "Brotjacklriegel": {
+    "lat":  48.8171,
+    "long":  13.2175
+  },
+  "SenderHaidenhof": {
+    "lat":  48.5654,
+    "long":  13.4335
+  },
+  "SenderDommelstadl": {
+    "lat":  48.5341,
+    "long":  13.4025
+  },
+  "SenderKuehberg": {
+    "lat":  48.5629,
+    "long":  13.4590
+  },
+  "SenderSchardenberg": {
+    "lat":  48.5218,
+    "long":  13.4874
+  },
+  "DL9RDZ-Buero": {
+    "lat":  48.5656,
+    "long":  13.4503
+  },
+  "DL9RDZ": {
+    "lat":  48.5856,
+    "long":  13.4372
+  },
+  "DB0PAS": {
+    "lat":  48.5850,
+    "long":  13.5559
+  },
+  "DC7DS": {
+    "lat":  48.5784,
+    "long":  13.3932
+  }
+}
+

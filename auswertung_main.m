@@ -7,47 +7,56 @@ clear;
 clc;
 close all;
 
+if OCTAVE_VERSION>0
+    pkg load signal;
+end
 % adds subfolder with functions to PATH
 [p,n,e] = fileparts(mfilename('fullpath'));
-addpath([p '/functions'])
+addpath([p '/functions']);
 
+% This needs to point to path with JSONLab toolbox
+% https://github.com/fangq/jsonlab
+addpath('jsonlab');
 
+locdb = loadjson("locations.json");
+config = lookuploc(loadjson("config.json"), locdb);
 %% Specify Parameters
 
 % RX and Ref TX Position
-rx1_lat = 49.441; % RX 1
-rx1_long = 7.767;
+rx1_lat = config.RX1.lat;
+rx1_long = config.RX1.long;
 
-rx2_lat = 49.422; % RX 2
-rx2_long = 7.739;
+rx2_lat = config.RX2.lat;
+rx2_long = config.RX2.long;
 
-rx3_lat = 49.425; % RX 3
-rx3_long = 7.756;
+rx3_lat = config.RX3.lat;
+rx3_long = config.RX3.long;
 
-tx_ref_lat = 49.45962; % Referenz: Rotenberg DAB
-tx_ref_long = 7.77116;
+tx_ref_lat = config.REF.lat;
+tx_ref_long = config.REF.long;
 
 % signal processing parameters
-signal_bandwidth_khz = 0;  % 400, 200, 40, 12, 0(no)
-smoothing_factor = 0;
-corr_type = 'dphase';  %'abs' or 'dphase'
-interpol_factor = 0;
+signal_bandwidth_khz = config.signal_bandwidth_khz;  % 400, 200, 40, 12, 0(no)
+smoothing_factor = config.smoothing_factor;
+corr_type = config.corr_type;
+interpol_factor = config.interpol_factor;
 
 % 1: show correlation plots
 % 2: show also input spcetrograms and spectra of input meas
 % 3: show also before and after filtering
-report_level = 1;
+report_level = config.report_level;
 
 % heatmap
-heatmap_resolution = 400; % resolution for heatmap points
-heatmap_threshold = 0.1;  % heatmap point with lower mag are suppressed for html output
+heatmap_resolution = config.heatmap_resolution; % resolution for heatmap points
+heatmap_threshold = config.heatmap_threshold;  % heatmap point with lower mag are suppressed for html output
 
 % IQ Data Files
-file_identifier = 'test.dat';
+file_identifier = config.file_identifier;
+folder_identifier = config.folder_identifier;
 
-dateiname1 = ['recorded_data/1_' file_identifier];
-dateiname2 = ['recorded_data/2_' file_identifier];
-dateiname3 = ['recorded_data/3_' file_identifier];
+dateiname1 = [folder_identifier '/1_' file_identifier];
+dateiname2 = [folder_identifier '/2_' file_identifier];
+dateiname3 = [folder_identifier '/3_' file_identifier];
 
 % known signal path differences between two RXes to Ref (sign of result is important!)
 rx_distance_diff12 = dist_latlong_kl(tx_ref_lat, tx_ref_long, rx1_lat, rx1_long) - dist_latlong_kl(tx_ref_lat, tx_ref_long, rx2_lat, rx2_long); % (Ref to RX1 - Ref to RX2) in meters

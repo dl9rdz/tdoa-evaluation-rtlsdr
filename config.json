@@ -1,0 +1,28 @@
+{
+  "RX1": {
+    "label": "RX1"
+  },
+  "RX2": {
+    "label": "RX2"
+  },
+  "RX3": {
+    "label": "RX3"
+  },
+  "REF": {
+    "label": "SenderKuehberg"
+  },
+  "TRU": {
+    "label": "SenderDommelstadl"
+  },
+
+  "signal_bandwidth_khz": 0,
+  "smoothing_factor": 0,
+  "corr_type": "dphase",
+  "interpol_factor": 0,
+  "report_level": 1,
+  "heatmap_resolution": 400,
+  "heatmap_threshold": 0.1,
+
+  "file_identifier": "test.dat",
+  "folder_identifier": "recorded_data"
+}
