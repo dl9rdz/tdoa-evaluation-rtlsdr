@@ -11,9 +11,18 @@
   "REF": {
     "label": "SenderKuehberg"
   },
-  "TRU": {
-    "label": "SenderDommelstadl"
+  "-notshown-TRU": {
+    "label": "SenderDommelstadl",
+    "icon": "brown_MarkerT.png"
   },
+  "MAP": {
+     "lat": 49.440066,
+     "long": 7.749126,
+     "zoom": 13
+  },
+
+  "num_rx": 3,
+  "hyperbol_color": [ "#FF0000", "#FF0000", "#FF0000" ],
 
   "signal_bandwidth_khz": 0,
   "smoothing_factor": 0,

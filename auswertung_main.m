@@ -207,8 +207,6 @@ disp('GENERATE HYPERBOLAS');
 disp(' ');
 disp('______________________________________________________________________________________________');
 disp('GENERATE HTML');
-rx_lat_positions  = [rx1_lat   rx2_lat   rx3_lat ];
-rx_long_positions = [rx1_long  rx2_long  rx3_long];
 
 hyperbola_lat_cell  = {points_lat1,  points_lat2, points_lat3};
 hyperbola_long_cell = {points_long1, points_long2, points_long3};
@@ -216,6 +214,6 @@ hyperbola_long_cell = {points_long1, points_long2, points_long3};
 [heatmap_long, heatmap_lat, heatmap_mag] = create_heatmap_kl(doa_meters12, doa_meters13, doa_meters23, rx1_lat, rx1_long, rx2_lat, rx2_long, rx3_lat, rx3_long, heatmap_resolution); % generate heatmap
 heatmap_cell = {heatmap_long, heatmap_lat, heatmap_mag};
 
-create_html_file( ['ergebnisse/map_' file_identifier '_' corr_type '_interp' num2str(interpol_factor) '_bw' int2str(signal_bandwidth_khz) '_smooth' int2str(smoothing_factor) '.html'], rx_lat_positions, rx_long_positions, hyperbola_lat_cell, hyperbola_long_cell, heatmap_cell, heatmap_threshold);
+create_html_file( ['ergebnisse/map_' file_identifier '_' corr_type '_interp' num2str(interpol_factor) '_bw' int2str(signal_bandwidth_khz) '_smooth' int2str(smoothing_factor) '.html'], config, hyperbola_lat_cell, hyperbola_long_cell, heatmap_cell, heatmap_threshold);
 
 disp('______________________________________________________________________________________________');
