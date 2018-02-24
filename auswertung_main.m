@@ -71,9 +71,9 @@ rx_distance23 = dist_latlong_kl(rx2_lat, rx2_long, rx3_lat, rx3_long);
 %% Read Signals from File
 disp('______________________________________________________________________________________________');
 disp('READ DATA FROM FILES');
-signal1 = read_file_iq(dateiname1);
-signal2 = read_file_iq(dateiname2);
-signal3 = read_file_iq(dateiname3);
+signal1 = read_file_iq(dateiname1, config.sample_format);
+signal2 = read_file_iq(dateiname2, config.sample_format);
+signal3 = read_file_iq(dateiname3, config.sample_format);
 
 if (report_level > 1)
     % display raw signals

@@ -34,4 +34,5 @@
 
   "file_identifier": "test.dat",
   "folder_identifier": "recorded_data"
+  "sample_format": "uint8"
 }
